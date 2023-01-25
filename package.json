@@ -1,6 +1,6 @@
 {
-  "name": "@fizx/browser_wasi_shim",
-  "version": "0.2.1",
+  "name": "fizx-browser_wasi_shim",
+  "version": "0.2.1.1",
   "license": "MIT OR Apache-2.0",
   "description": "A pure javascript shim for WASI",
   "scripts": {
