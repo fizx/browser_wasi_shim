@@ -39,19 +39,17 @@ export class OpenFile extends Fd {
                 calculated_offset = offset;
                 break;
             case wasi.WHENCE_CUR:
-                calculated_offset = this.file_pos + offset;
+                calculated_offset = Number(this.file_pos) + Number(offset);
                 break;
             case wasi.WHENCE_END:
-                calculated_offset = this.file.data.byteLength + offset;
+                calculated_offset = Number(this.file.data.byteLength) + Number(offset);
                 break;
             default:
                 return { ret: wasi.ERRNO_INVAL, offset: 0 };
         }
-
         if (calculated_offset < 0) {
             return { ret: wasi.ERRNO_INVAL, offset: 0 };
         }
-
         this.file_pos = calculated_offset;
         return { ret: 0, offset: calculated_offset };
     }
@@ -65,6 +63,11 @@ export class OpenFile extends Fd {
                 this.file.data = new Uint8Array(this.file_pos + buffer.byteLength);
                 this.file.data.set(old);
             }
+
+            console.log(new TextDecoder("utf-8").decode(buffer.slice(
+                0,
+                this.file.size - this.file_pos,
+            )));
             this.file.data.set(
                 buffer.slice(
                     0,
