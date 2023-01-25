@@ -1,5 +1,5 @@
 {
-  "name": "@bjorn3/browser_wasi_shim",
+  "name": "@fizx/browser_wasi_shim",
   "version": "0.2.1",
   "license": "MIT OR Apache-2.0",
   "description": "A pure javascript shim for WASI",
@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bjorn3/browser_wasi_shim.git"
+    "url": "git+https://github.com/fizx/browser_wasi_shim.git"
   },
-  "author": "bjorn3",
+  "author": "fizx",
   "bugs": {
-    "url": "https://github.com/bjorn3/browser_wasi_shim/issues"
+    "url": "https://github.com/fizx/browser_wasi_shim/issues"
   },
   "exports": {
     ".": {
       "import": "./src/index.js"
     }
   },
-  "homepage": "https://github.com/bjorn3/browser_wasi_shim#readme",
+  "homepage": "https://github.com/fizx/browser_wasi_shim#readme",
   "devDependencies": {
     "flow-bin": "^0.159.0"
   }
